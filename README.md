@@ -6,6 +6,7 @@ Vokto is a serverless, event-driven service marketplace designed to connect loca
 The project is built using a **Zero-Infrastructure Cost** model, leveraging cloud automation and serverless tools.
 
 - **Frontend:** HTML5, CSS3, JavaScript (Hosted on Netlify).
+- **Domain:** Godaddy
 - **Automation Hub:** Make.com (formerly Integromat).
 - **Database:** Google Sheets API (for CRM and record-keeping).
 - **Real-time Notifications:** Telegram Bot API (for instant lead alerts).
@@ -24,5 +25,28 @@ The project is built using a **Zero-Infrastructure Cost** model, leveraging clou
 - **Serverless Backend:** No dedicated server maintenance required.
 - **Scalability:** The logic can be easily expanded to other cities and service categories.
 
-## 🖥️ Live Demo
-[Link to your vokto.in website]
+## 🖥️ ## 🚀 Deployment
+The site is live at: [https://vokto.in](https://vokto.in)
+
+
+**"System Workflow"**
+
+**1) Workflow Breakdown:**
+
+**User Layer:** Customer/Mistry interacts with the Frontend (HTML/JS) on Netlify.
+
+**API Gateway:** Form submission triggers a Webhook to Make.com.
+
+**2) Data Processing Layer:**
+
+**Node A:** Data is logged into Google Sheets (The Database).
+
+**Node B (Router):** Logic matching starts (Condition: Customer Pincode == Mistry Pincode AND Service Type == Expertise).
+
+**3) Notification Layer:**
+
+**Match Found:** Telegram Bot triggers a notification to the "Booking Group".
+
+**No Match:** Admin receives an "Urgent: Provider Not Found" alert.
+
+**4) Communication Layer:** Confirmation emails are sent via Brevo SMTP through the Cloudflare routed custom email.
